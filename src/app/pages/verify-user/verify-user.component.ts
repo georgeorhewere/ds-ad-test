@@ -15,13 +15,8 @@ export class VerifyUserComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe(params => {
-      console.log(params);
-      // { order: "popular" }
-      //his.order = params.order;
-      //console.log(this.order); // popular
-    }
-  ); 
+  
+
 
   var tokenKeys = this.route.snapshot.fragment?.split('&')
   var tokenObj:any ={};
@@ -36,9 +31,9 @@ export class VerifyUserComponent implements OnInit {
   
   var authTokenObj:ADTokenResult = tokenObj as ADTokenResult;
   console.log(authTokenObj)
-  console.log("Init verify")
-  var expiryTimeInMinutes = +authTokenObj.expires_in/60;
-  console.log("expires in", expiryTimeInMinutes)
+
+//  var expiryTimeInMinutes = +authTokenObj.expires_in/60;
+  // console.log("expires in", expiryTimeInMinutes)
 
   }
 
